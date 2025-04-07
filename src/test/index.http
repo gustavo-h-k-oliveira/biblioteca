@@ -1,0 +1,48 @@
+@url = http://localhost:8080
+###
+GET {{url}}/usuarios
+###
+GET {{url}}/livros
+###
+GET {{url}}/emprestimos
+###
+POST {{url}}/usuarios
+Content-Type: application/json
+
+{
+    "nome": "Lelouch Lamperouge",
+    "email": "britannian.traitor@email.com",
+    "telefone": "81777777777",
+    "dataCadastro": "2025-04-07"
+}
+###
+POST {{url}}/livros
+Content-Type: application/json
+
+{
+    "titulo": "How to overthrow the government?",
+    "autor": "V",
+    "quantidadeEstoque": 14 
+}
+###
+POST {{url}}/emprestimos
+Content-Type: application/json
+
+{
+    "usuario": {
+        "id": 5,
+        "nome": "Lelouch Lamperouge",
+        "email": "britannian.traitor@email.com",
+        "telefone": "81777777777",
+        "dataCadastro": "2025-04-07"
+    },
+    "livro": {
+        "id": 2,
+        "titulo": "How to overthrow the government?",
+        "autor": "V",
+        "quantidadeEstoque": 14
+    },
+    "dataEmprestimo": "2025-04-07",
+    "dataDevolucao": "2025-04-10",
+    "status": "emprestado"
+}
