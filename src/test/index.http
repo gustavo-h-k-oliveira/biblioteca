@@ -16,6 +16,35 @@ Content-Type: application/json
     "dataCadastro": "2025-04-07"
 }
 ###
+POST {{url}}/usuarios
+Content-Type: application/json
+
+{
+  "nome": "",
+  "email": "teste@",
+  "telefone": ""
+}
+###
+POST {{url}}/livros
+Content-Type: application/json
+
+{
+  "titulo": "",
+  "autor": "",
+  "quantidadeEstoque": -5
+}
+###
+POST {{url}}/emprestimos
+Content-Type: application/json
+
+{
+  "idUsuario": null,
+  "idLivro": null,
+  "dataEmprestimo": "2025-04-08",
+  "dataDevolucao": "2025-03-01",
+  "status": ""
+}
+###
 POST {{url}}/livros
 Content-Type: application/json
 
@@ -29,20 +58,9 @@ POST {{url}}/emprestimos
 Content-Type: application/json
 
 {
-    "usuario": {
-        "id": 5,
-        "nome": "Lelouch Lamperouge",
-        "email": "britannian.traitor@email.com",
-        "telefone": "81777777777",
-        "dataCadastro": "2025-04-07"
-    },
-    "livro": {
-        "id": 2,
-        "titulo": "How to overthrow the government?",
-        "autor": "V",
-        "quantidadeEstoque": 14
-    },
-    "dataEmprestimo": "2025-04-07",
-    "dataDevolucao": "2025-04-10",
-    "status": "emprestado"
+  "usuario": { "id": 5 },
+  "livro": { "id": 2 },
+  "dataEmprestimo": "2025-04-06",
+  "dataDevolucao": "2025-04-20",
+  "status": "emprestado"
 }
