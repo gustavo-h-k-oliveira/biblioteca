@@ -38,8 +38,8 @@ POST {{url}}/emprestimos
 Content-Type: application/json
 
 {
-  "idUsuario": null,
-  "idLivro": null,
+  "id_usuario": null,
+  "id_livro": null,
   "dataEmprestimo": "2025-04-08",
   "dataDevolucao": "2025-03-01",
   "status": ""
@@ -58,9 +58,20 @@ POST {{url}}/emprestimos
 Content-Type: application/json
 
 {
-  "usuario": { "id": 5 },
-  "livro": { "id": 2 },
+  "id_usuario": 5,
+  "id_livro": 2,
   "dataEmprestimo": "2025-04-06",
+  "dataDevolucao": "2025-04-20",
+  "status": "emprestado"
+}
+###
+POST {{url}}/emprestimos
+Content-Type: application/json
+
+{
+  "id_usuario": 1,
+  "id_livro": 1,
+  "dataEmprestimo": "2025-04-13",
   "dataDevolucao": "2025-04-20",
   "status": "emprestado"
 }

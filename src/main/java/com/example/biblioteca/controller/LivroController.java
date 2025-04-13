@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.biblioteca.dto.LivroDTO;
 import com.example.biblioteca.model.Livro;
-import com.example.biblioteca.repository.LivroRepository;
+import com.example.biblioteca.service.LivroService;
 
 import jakarta.validation.Valid;
 
@@ -21,20 +21,17 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/livros")
 @RequiredArgsConstructor
 public class LivroController {
-    private final LivroRepository livroRepo;
+
+    private final LivroService livroService;
 
     @GetMapping
     public List<Livro> listarTodos() {
-        return livroRepo.findAll();
+        return livroService.listarTodos();
     }
 
     @PostMapping
     public ResponseEntity<Livro> criar(@RequestBody @Valid LivroDTO dto) {
-        Livro livro = new Livro();
-        livro.setTitulo(dto.getTitulo());
-        livro.setAutor(dto.getAutor());
-        livro.setQuantidadeEstoque(dto.getQuantidadeEstoque());
-        
-        return ResponseEntity.ok(livroRepo.save(livro));
+        Livro livro = livroService.salvar(dto);
+        return ResponseEntity.ok(livro);
     }
 }
