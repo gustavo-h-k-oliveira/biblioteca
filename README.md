@@ -14,3 +14,7 @@ biblioteca/
 └── src/main/resources/
     └── application.properties
 ```
+## Executando a aplicação
+```bash
+mvn spring-boot:run
+```
